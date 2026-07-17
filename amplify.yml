@@ -1,7 +1,6 @@
 version: 1
 frontend:
-  # 🚀 ESTO LE DICE A AWS QUE TODO EL FRONTEND CORRE DESDE ESTA CARPETA DESDE EL INICIO
-  appRoot: Frontend/frontend
+  appRoot: login-proyecto/Frontend/frontend
   phases:
     preBuild:
       commands:
