@@ -1,19 +1,17 @@
 version: 1
 frontend:
+  appRoot: Frontend/frontend
   phases:
     preBuild:
       commands:
-        # Entra a la ruta correcta e instala los paquetes
-        - cd Frontend/frontend && npm install
+        - npm install
     build:
       commands:
-        # Compila el proyecto de React
-        - cd Frontend/frontend && npm run build
+        - CI=false npm run build
   artifacts:
-    # Indica dónde quedó la carpeta build final
-    baseDirectory: Frontend/frontend/build
+    baseDirectory: build
     files:
       - '**/*'
   cache:
     paths:
-      - Frontend/frontend/node_modules/**/*
+      - node_modules/**/*
