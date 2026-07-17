@@ -9,8 +9,11 @@ def login_view(request):
         data = json.loads(request.body)
         username = data.get('username')
         password = data.get('password')
+        
         user = authenticate(username=username, password=password)
         if user is not None:
             return JsonResponse({'status': 'ok'})
         else:
             return JsonResponse({'status': 'fail'}, status=401)
+            
+    return JsonResponse({'error': 'Método no permitido. Usa POST desde React.'}, status=405)
