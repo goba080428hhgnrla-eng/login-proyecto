@@ -1,22 +1,19 @@
 version: 1
 
-frontend:
-  appRoot: Frontent/frontend
-
-  phases:
-    preBuild:
-      commands:
-        - npm install
-
-    build:
-      commands:
-        - npm run build
-
-  artifacts:
-    baseDirectory: dist
-    files:
-      - '**/*'
-
-  cache:
-    paths:
-      - node_modules/**/* 
+applications:
+  - appRoot: Frontend/frontend
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: build
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
